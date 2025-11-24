@@ -1,14 +1,20 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable static export
+  output: "export",
+
+  // Keep TypeScript and ESLint build ignores
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // Images
   images: {
+    unoptimized: true, // for static export
     remotePatterns: [
       {
         protocol: 'https',
